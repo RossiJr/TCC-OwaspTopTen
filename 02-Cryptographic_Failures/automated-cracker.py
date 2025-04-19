@@ -10,7 +10,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 TARGET_HASH         = "a9993e364706816aba3e25717850c26c9cd0d89d"   # Hash to crack
 ALGORITHM           = "sha1"                                       # Hash algorithm (md5, sha1, sha256, etc.)
 SALT                = ""                                           # Optional salt prepended to plaintext
-MODE                = "brute"                                    # "rainbow", "dict", or "brute"
+MODE                = "rainbow"                                    # "rainbow", "dict", or "brute"
 RAINBOW_TABLE       = "rainbow_table.txt"                          # File with plaintext:hash entries
 WORDLIST            = "rockyou.txt"                                # Path to wordlist file (one word per line)
 MAX_LEN             = 5                                            # Max length for brute‑force
