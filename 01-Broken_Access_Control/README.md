@@ -30,7 +30,7 @@ Broken Access Control (A01) occurs when an application does not properly enforce
 - **Python Libraries:**
   - Flask
 
-## 5. Exploration Methodology
+## 5. Techniques and Tatics
 1. Anonymous Access
    - Attempt to access protected endpoints without credentials
    - Verify HTTP status codes (should return 401 or 403)
@@ -48,9 +48,28 @@ Broken Access Control (A01) occurs when an application does not properly enforce
    - Inspect .env, config/database.yml, or appsettings.json for default creds
    - Examine web server configs (nginx.conf, .htaccess) for directory-level rules
 
+## 6. Exploration Flow
+
+1. **Reconnaissance and Scanning:**
+  Use tools such as NMAP, or other semi-automated scanning tool that might reveal endpoints susceptible to access-control testing.
+2. **Initial Access:**
+  Attempt exploring application misconfigurations or known flaws in web applications. This might grant you with more susceptible endpoints for further testing.
+3. **Credential Access (Valid Access):**
+  Obtain valid credentials via default credentials, or credential stuffing, or pishing. With valid accounts, you can now bypass superficial access control and define a basis for a deeper exploration.
+4. **Discovery:**
+  Enumerate user roles and accounts through APIs, predictable endpoints, or error messages. It is possible to perform targeted IDOR and role-based checks when knowing existing accounts.
+5. **Execution:**
+  Using automated scripts (e.g., Python IDOR Scanners, Burp Intruder Payloads) to interact with the application. Those scripts allow a fast and repeatable testing of resource identifier and parameters.
+6. **Defense Evasion:**
+  Tamper with or bypass authentication logic by altering session tokens, forging SSO requests, or injecting malicious modules. Then you can evade server-side checks.
+7. **Privilige Escalation:**
+  Try to intercept and change JSON Web Tokens (JWT) or cookies to change roles and permissions, confirming server-side rejects tampered tokens.
+8. **Collection:**
+  After gaining the unauthorized access, harverst data from repositories, file shares, databases, and any other data-source exposed via broken controls.  
+
 > See docs/flow-diagram.png for an illustrated walkthrough of these steps.
 
-## 8. Payload Collections
+## 7. Payload Collections
 - **Offensive-Payloads**  
   A general collection of offensive payloads and wordlists, including server config file attack vectors.  
   URL: https://github.com/InfoSecWarrior/Offensive-Payloads
@@ -61,6 +80,8 @@ Broken Access Control (A01) occurs when an application does not properly enforce
   Comprehensive IDOR payloads, methodologies, and Burp Intruder files.  
   URL: https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Insecure%20Direct%20Object%20References
 
-## 9. References
+## 8. References
 
-1. **OWASP Top 10: Broken Access Control** – https://owasp.org/A01_2021-Broken_Access_Control/
+1. **OWASP Top 10 - Broken Access Control:** https://owasp.org/A01_2021-Broken_Access_Control/
+2. **MITRE - Access Token Manipulation:** https://attack.mitre.org/techniques/T1134/
+3. **MITRE - Valid Accounts:** https://attack.mitre.org/techniques/T1078/
