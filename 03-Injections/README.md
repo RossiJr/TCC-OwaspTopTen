@@ -64,4 +64,4 @@ https://github.com/payloadbox/command-injection-payload-list
 ## 8. References
 1. **OWASP Top 10 – Injection:** https://owasp.org/Top10/A03_2021-Injection/
 2. **SQL Injection Prevention Cheat Sheet:** https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html
-3. **SQLMap Documentation:** https://sqlmap.org/
+3. **SQLMap Documentation:** https://sqlmap.org/ 
