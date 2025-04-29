@@ -4,7 +4,7 @@
 Insecure Design (A04) occurs when a system's architecture lacks adequate security controls or uses flawed security assumptions from the start. Unlike implementation bugs, these flaws are embedded in how the application was conceived. In research, exploring this vulnerability involves identifying missing security requirements, reviewing the threat landscape during the design phase, and simulating abuse cases to demonstrate flaws in logic, process, or privilege separation.
 
 ## 2. Objectives  
-- Build a structured methodology (“flow”) to identify injection points  
+- Build a structured methodology (“flow”) to identify insecure code points  
 - Provide manual techniques to analyze application logic and threat modeling gaps
 - Document user roles, business logic, abuse cases, and expected vs. actual behavior 
 
